@@ -1,24 +1,62 @@
-* {
-    box-sizing: border-box;
-}
 
 html, body {
     height: 100%;
     margin: 0;
 }
 
+.navbar {
+    background-color: #673ab7;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 400px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.titulo {
+    color: white;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+p {
+    max-width: 600px;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+
 body {
     background-image: linear-gradient(to bottom, #d1c4e9, #f8bbd0); 
+}
+
+
+
+.contenedor-principal {
     color: #333;
-    display: flex;
+    display: inline-block;
+    vertical-align: top;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    width: 65%; /* Cambiado a 50% */
     margin: 0;
     padding: 20px;
-    font-family: Arial, sans-serif; 
+    font-family: Arial, sans-serif;
 }
+
+.contenedor-secundario {
+    display: inline-block;
+    vertical-align: top; /* Alinea en la parte superior */
+    width: 30%; /* Cambiado a 50% */
+}
+
 
 
 h1 {
@@ -51,13 +89,12 @@ p {
 }
 
 .cuadro {
-    border: 2px solid #33333381; 
-    padding: 20px; 
-    background-color: #ffffff5b; /* Establece el color de fondo del cuadro a blanco */
-    border-radius: 5px; 
-    
+    border: 2px solid #33333381;
+    padding: 20px;
+    background-color: #ffffff5b;
+    border-radius: 5px;
+    width: 30%; /* Ajusta el ancho del cuadro según lo que prefieras */
 }
-
 .moneda {
     display: flex;
     align-items: center;
@@ -104,8 +141,52 @@ select:focus, input:focus,button:focus{
     outline: 0;
 }
 
-@media (max-widht:600px){
-    .moneda input{
-        width: 200px;
-    }
+
+.cotizaciones-container {
+    border: 2px solid #33333381;
+    padding: 20px;
+    background-color: #ffffff5b;
+    border-radius: 5px;
+    width: 30%; /* Ancho del contenedor de cotizaciones */
 }
+.cotizaciones {
+    margin-bottom: 20px; /* Espacio entre las secciones de cotizaciones */
+}
+
+
+
+.cotizaciones-container {
+    border: 2px solid #33333381;
+    padding: 20px;
+    background-color: #ffffff5b;
+    border-radius: 5px;
+    width: 48%;
+  }
+  
+  .cotizaciones {
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    color: #673ab7;
+  }
+  
+  .cotizacion {
+    border: 1px solid #33333381;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+  }
+  
+  .cotizacion h2 {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .cotizacion p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0;
+  }
