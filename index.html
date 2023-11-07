@@ -1,11 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Conversor</title>
 </head>
 <body>
+  
+    <img src="/img/LOGO.png" alt="Conversor icono">
+    <h1>Calculadora/Conversor Moneda</h1>
+    <p>Selecciona la moneda, y la cantidad para realizar la conversión</p>
+
+    <div class="cuadro">
+        <div class="container">
+            <div class="moneda">
+                <select id="moneda-uno">
+                    <option value="SELECCIONE" selected> -SELECCIONE- </option>
+                    <option value="PESO-ARGENTINO">Peso Argentino (ARS)</option>
+                    <option value="PESO-CHILENO">Peso Chileno (CLP)</option>
+                    <option value="PESO-COLOMBIANO">Peso Colombiano (COP)</option>
+                    <option value="COLON-COSTARRICENSE">Colón Costarricense (CRC)</option>
+                    <option value="DOLAR-ECUATORIANO">Dólar Ecuatoriano (USD)</option>
+                    <option value="PESO-MEXICANO">Peso Mexicano (MXN)</option>
+                    <option value="SOL-PERUANO">Sol Peruano (PEN)</option>
+                    <option value="PESO-URUGUAYO">Peso Uruguayo (UYU)</option>
+                    <option value="DOLAR-ESTADOUNIDENSE">Dólar Estadounidense (USD)</option>
+                    <option value="EURO">Euro (EUR)</option>
+                    <option value="YUAN-CHINO">Yuan Chino (CNY)</option>
+                    <option value="LIBRA-ESTERLINA">Libra Esterlina (GBP)</option>
+                </select>
+                <input 
+                 type="number"
+                 id="cantidad-uno" 
+                 placeholder="0" 
+                 value="1">      
+            </div>
     
+            <div class="taza-de-cambio">
+                <button class="btn" id="taza">
+                    CAMBIO
+                </button>
+                
+                <div class="cambio" id="cambio"></div>
+            </div>
+    
+    
+            <div class="moneda">
+                <select id="moneda-dos">
+                    <option value="SELECCIONE" selected> -SELECCIONE- </option>
+                    <option value="PESO-ARGENTINO">Peso Argentino (ARS)</option>
+                    <option value="PESO-CHILENO">Peso Chileno (CLP)</option>
+                    <option value="PESO-COLOMBIANO">Peso Colombiano (COP)</option>
+                    <option value="COLON-COSTARRICENSE">Colón Costarricense (CRC)</option>
+                    <option value="DOLAR-ECUATORIANO">Dólar Ecuatoriano (USD)</option>
+                    <option value="PESO-MEXICANO">Peso Mexicano (MXN)</option>
+                    <option value="SOL-PERUANO">Sol Peruano (PEN)</option>
+                    <option value="PESO-URUGUAYO">Peso Uruguayo (UYU)</option>
+                    <option value="DOLAR-ESTADOUNIDENSE">Dólar Estadounidense (USD)</option>
+                    <option value="EURO">Euro (EUR)</option>
+                    <option value="YUAN-CHINO">Yuan Chino (CNY)</option>
+                    <option value="LIBRA-ESTERLINA">Libra Esterlina (GBP)</option>
+                </select>
+                <input 
+                 type="number"
+                 id="cantidad-uno" 
+                 placeholder="0"
+                 >
+                
+            </div>
+    
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-LZx4fD5oiUe9AJXQxiMMe6tnrm5Atmm4Cfd16uL4WZyA2nqTn0YdDw1TIUfsdF8a" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-zb5+1W1yCe0irKc4PDvqFfG0XLPKtOfB3hJg9wN/wFFqwMQL5D6G1AETB5YwA5U1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-7DpZy5QXPP9LXXf5aD7GTzD1SjbRbEP+p4brx5lVPJug6xgX6unqRT13IN9zN6Tl" crossorigin="anonymous"></script>
+
+    <script src="script.js">
+    </script>
 </body>
 </html>
