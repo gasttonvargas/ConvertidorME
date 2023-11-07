@@ -3,99 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
     <link rel="stylesheet" href="style.css">
     <title>Conversor</title>
 </head>
 <body>
-  
-    <div class="navbar">
-        <img src="/img/LOGO.png" alt="Conversor icono" class="logo">
-        <h1 class="titulo">Calculadora/Conversor Moneda</h1>
+    <nav class="navbar navbar-custom">
+        <a class="navbar-brand">Conversión de divisas <i class="fa-solid fa-sack-dollar"></i></a>
+    </nav>
+
+    <div class="container text-center">
+        <img src="/img/LOGO.png" alt="Logo" class="logo img-fluid">
+        <p class="mb-4">Selecciona la moneda y la cantidad para realizar la conversión</p>
     </div>
-
-    <p>Selecciona la moneda y la cantidad para realizar la conversión</p>
-
     
 
-    <div class="contenedor-principal">
-        <div class="cuadro">
-            <div class="container">
-                <div class="moneda">
-                    <select id="moneda-uno">
-                            <option value="ARS">ARS</option>
-                            <option value="BRL">BRL</option>
-                            <option value="CLP">CLP</option>
-                            <option value="COP">COP</option>
-                            <option value="MXN">MXN</option>
-                            <option value="PEN">PEN</option>
-                            <option value="UYU">UYU</option>
-                            <option value="AUD">AUD</option>
-                            <option value="EUR">EUR</option>
-                            <option value="USD" selected>USD</option>
-                    </select>
-                    <input 
-                     type="number"
-                     id="cantidad-uno" 
-                     placeholder="0" 
-                     value="1">      
-                </div>
-        
-                <div class="taza-de-cambio">
-                    <button class="btn" id="taza">
-                        CAMBIO
-                    </button>
-                    
-                    <div class="cambio" id="cambio"></div>
-                </div>
-        
-        
-                <div class="moneda">
-                    <select id="moneda-dos">
-                            <option value="ARS">ARS</option>
-                            <option value="BRL">BRL</option>
-                            <option value="CLP">CLP</option>
-                            <option value="COP">COP</option>
-                            <option value="MXN">MXN</option>
-                            <option value="PEN">PEN</option>
-                            <option value="UYU">UYU</option>
-                            <option value="AUD">AUD</option>
-                            <option value="EUR">EUR</option>
-                            <option value="USD" selected>USD</option>
-                    </select>
-                    <input 
-                     type="number"
-                     id="cantidad-dos" 
-                     placeholder="0"
-                     >
-                    
-                </div>
+    <div class="row justify-content-center bg-container">
+        <div class="col-md-5">
+            <div class="form-group container-form">
+                <label for="moneda-uno">Seleccione una moneda</label>
+                <select class="form-control " id="moneda-uno">
+                    <option value="ARS">ARS</option>
+                    <option value="BRL">BRL</option>
+                    <option value="CLP">CLP</option>
+                    <option value="COP">COP</option>
+                    <option value="MXN">MXN</option>
+                    <option value="PEN">PEN</option>
+                    <option value="UYU">UYU</option>
+                    <option value="AUD">AUD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="USD" selected>USD</option>
+                </select>
+                <label for="cantidad-uno" class="mt-2 cantidad-label">Cantidad</label>
+                <input type="number" class="form-control" id="cantidad-uno" placeholder="0" value="1">
+            </div>
+        </div>
+        <div class="col-md-2 d-flex align-items-center justify-content-center">
+            <button id="intercambiar" class="btn btn-outline-secondary">
+                <i class="fas fa-exchange-alt"></i>
+            </button>
+        </div>
+        <div class="col-md-5">
+            <div class="form-group container-form">
+                <label for="moneda-dos">Seleccione la moneda a la que desea convertir</label>
+                <select class="form-control" id="moneda-dos">
+                    <option value="ARS">ARS</option>
+                    <option value="BRL">BRL</option>
+                    <option value="CLP">CLP</option>
+                    <option value="COP">COP</option>
+                    <option value="MXN">MXN</option>
+                    <option value="PEN">PEN</option>
+                    <option value="UYU">UYU</option>
+                    <option value="AUD">AUD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="USD" selected>USD</option>
+                </select>
+                <label for="cantidad-dos" class="mt-2 cantidad-label">Cantidad</label>
+                <input type="number" class="form-control" id="cantidad-dos" placeholder="0">
             </div>
         </div>
     </div>
 
 
-        <div class="contenedor-secundario">
-            <div class="cotizaciones-container">
-                <div class="cotizaciones">
-                    <h2>Cotizaciones</h2>
-                    <div id="cotizaciones-dolar">
-        
-                    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-12 text-center">
+            <h3>Cotización USD</h2>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center ">
+        <!-- Card para USD Oficial -->
+        <div class="card" id="cotizacion-oficial" style="width: 18rem;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">USD Oficial</h5>
+                    <i class="fa-solid fa-landmark"></i>
                 </div>
+                <p class="card-text">Información sobre el USD Oficial.</p>
+            </div>
+        </div>
+
+        <!-- Card para USD Blue -->
+        <div class="card" id="cotizacion-blue" style="width: 18rem;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">USD Blue</h5>
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <p class="card-text">Información sobre el USD Blue.</p>
+            </div>
+        </div>
+
+        <!-- Card para USD Bolsa -->
+        <div class="card" id="cotizacion-bolsa" style="width: 18rem;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">USD Bolsa</h5>
+                    <i class="fa-solid fa-sack-dollar"></i>
+                </div>
+                <p class="card-text">Información sobre el USD Bolsa.</p>
+            </div>
+        </div>
+
+        <!-- Card para USD Solidario -->
+        <div class="card" id="cotizacion-solidario" style="width: 18rem;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">USD Solidario</h5>
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                </div>
+                <p class="card-text">Información sobre el USD Solidario.</p>
+            </div>
+        </div>
+
+        <!-- Card para USD Tarjeta -->
+        <div class="card" id="cotizacion-tarjeta" style="width: 18rem;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">USD Tarjeta</h5>
+                    <i class="fa-solid fa-credit-card"></i>
+                </div>
+                <p class="card-text">Información sobre el USD Tarjeta.</p>
+            </div>
+        </div>
+
+        <!-- Card para USD Mayorista -->
+        <div class="card" id="cotizacion-mayorista" style="width: 18rem;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">USD Mayorista</h5>
+                    <i class="fa-solid fa-building-wheat"></i>
+                </div>
+                <p class="card-text">Información sobre el USD Mayorista.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+            <h3 class="mt-5">Otras Cotizaciónes </h3>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center">
+        <!-- Card para EUR -->
+        <div class="card" id="cotizacion-eur" style="width: 18rem;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">EUR</h5>
+                    <i class="fab fa-eur"></i>
+                </div>
+                <p class="card-text">Información sobre el EUR.</p>
+            </div>
+        </div>
     
-                <div class="cotizaciones">
-                    <h2>Otras Monedas</h2>
-                    <div id="cotizaciones-otras">
-                
-                    </div>
+        <!-- Card para BRL -->
+        <div class="card" id="cotizacion-brl" style="width: 18rem;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">BRL</h5>
+                    <i class="fab fa-brazil"></i>
+                </div>
+                <p class="card-text">Información sobre el BRL.</p>
+            </div>
+        </div>
+    
+        <!-- Card para CLP -->
+        <div class="card" id="cotizacion-clp" style="width: 18rem;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">CLP</h5>
+                    <i class="fab fa-chile"></i>
+                </div>
+                <p class="card-text">Información sobre el CLP.</p>
+            </div>
+        </div>
+    
+        <!-- Card para UYU -->
+        <div class="card" id="cotizacion-uyu" style="width: 18rem;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">UYU</h5>
+                    <i class="fab fa-uruguay"></i>
+                </div>
+                <p class="card-text">Información sobre el UYU.</p>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <footer class="footer text-center mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mb-4">
+                    <ul class="list-inline social-icons">
+                        <li class="list-inline-item mr-4">
+                            <a href="https://www.instagram.com/gasttonvargas/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item mr-4">
+                            <a href="https://www.linkedin.com/in/gaston-junior-eduardo-vargas-195491184/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </li>
+                        <li class="list-inline-item mr-4">
+                            <a href="https://cafecito.app/cucstr4p"><i class="fa-solid fa-mug-saucer"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://github.com/gasttonvargas" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-12">
+                    <p class="nm-ft"> APIs utilizadas:</p>
+                    <ul class="list-unstyled">
+                        <li><a href="https://dolarapi.com/" target="_blank">API 1</a></li>
+                        <li><a href="https://www.exchangerate-api.com/" target="_blank">API 2</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12">
+                    <p class="nm-ft"> Gastón Vargas &copy; Todos los derechos reservados</p>
                 </div>
             </div>
+        </div>
+    </footer>
+    
     
 
-
-
-
-    <script src="script.js">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

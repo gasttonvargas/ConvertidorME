@@ -1,192 +1,207 @@
-
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-.navbar {
-    background-color: #673ab7;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.logo {
-    width: 400px;
-    height: 100px;
-    margin-right: 10px;
-}
-
-.titulo {
-    color: white;
-    font-size: 1.5em;
-    margin: 0;
-}
-
-p {
-    max-width: 600px;
-    text-align: center;
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-
 body {
     background-image: linear-gradient(to bottom, #d1c4e9, #f8bbd0); 
 }
 
+.navbar-custom {
+    background-color: #032547af;
+}
 
+.navbar-brand{
+    color: white;
+}
+/*LOGO*/
+.logo {
+    max-width: 500px; 
+    margin: 0 auto; 
+}
 
-.contenedor-principal {
-    color: #333;
-    display: inline-block;
-    vertical-align: top;
-    flex-direction: column;
-    align-items: center;
-    width: 65%; /* Cambiado a 50% */
-    margin: 0;
+@media screen and (max-width: 768px) {
+    .logo {
+        max-width: 80%; 
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .logo {
+        max-width: 60%; 
+    }
+}
+
+.mb-4{
+    font-size: 25px;
+}
+
+.bg-container {
     padding: 20px;
-    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
-.contenedor-secundario {
+.container-form {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.cantidad-label {
+    margin-top: 10px;
+}
+
+.btn-outline-secondary {
+    border-color: #ccc;
+    color: #333;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #ccc;
+}
+
+/*Cards de otras cotizaciones*/
+#intercambiar {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 50%; 
+    width: 50px; 
+    height: 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#intercambiar:hover {
+    transform: rotate(180deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.container-form {
+    padding: 50px; 
+    border-radius: 20px; 
+    box-shadow: 0px 10px 20px rgb(46, 46, 46); 
+}
+
+.card {
+    color: white;
+    margin: 10px;
+    width: 18rem; 
     display: inline-block;
-    vertical-align: top; /* Alinea en la parte superior */
-    width: 30%; /* Cambiado a 50% */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-
-
-h1 {
-    color: #673ab7; 
-    margin-bottom: 20px; 
-    font-size: 2em; 
+.card-title {
+    font-weight: bold;
 }
 
-p {
-    max-width: 600px; 
-    text-align: center;
-    font-size: 1.2em; 
-    margin-bottom: 30px; 
+.card {
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.btn {
-    color: white; 
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card i {
+    font-size: 2rem;
+    color: #333;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05); 
+    background-color: #000; 
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 1em; /* Ajusté el tamaño del texto */
-    padding: 10px 20px; 
-    background-color: #673ab7; 
-    margin-bottom: 15px; /*margen inferior al botón para separarlo del siguiente elemento */
-    margin-top: 15px;
-    transition: background-color 0.3s;
 }
 
-.btn:hover {
-    background-color: #1d094d; /* Cambié el color de fondo al pasar el mouse */
+.card:hover .card-title,
+.card:hover .card-text,
+.card:hover i {
+    color: #fff; 
 }
 
-.cuadro {
-    border: 2px solid #33333381;
-    padding: 20px;
-    background-color: #ffffff5b;
-    border-radius: 5px;
-    width: 30%; /* Ajusta el ancho del cuadro según lo que prefieras */
-}
-.moneda {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+
+/*FOOTER*/
+
+.footer {
+    background-color: #032547af;
+    padding: 20px 0;
+    text-align: center;
 }
 
-.moneda select {
-    flex: 1; /* Hace que el select ocupe el espacio disponible */
-    padding: 10px 20px 10px 10px;
-    border: 1px solid #33333327;
-    font-size: 16px;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    line-height: normal;
-}
-
-.moneda input {
-    flex: 1; /* Hace que el input ocupe el espacio disponible */
-    border: 0;
-    font-size: 24px;
-    text-align: right;
-    padding-top: 5px;
-}
-
-.moneda select, .moneda input {
-    margin: 0; /* Asegura que no haya márgenes */
-}
-
-.taza-de-cambio{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-}
-
-.cambio{
+.footer h4 {
     color: #333;
-    font-size: 14px;
-    padding: 0 10px;
-}
-
-select:focus, input:focus,button:focus{
-    outline: 0;
-}
-
-
-.cotizaciones-container {
-    border: 2px solid #33333381;
-    padding: 20px;
-    background-color: #ffffff5b;
-    border-radius: 5px;
-    width: 30%; /* Ancho del contenedor de cotizaciones */
-}
-.cotizaciones {
-    margin-bottom: 20px; /* Espacio entre las secciones de cotizaciones */
-}
-
-
-
-.cotizaciones-container {
-    border: 2px solid #33333381;
-    padding: 20px;
-    background-color: #ffffff5b;
-    border-radius: 5px;
-    width: 48%;
-  }
-  
-  .cotizaciones {
     margin-bottom: 20px;
-  }
-  
-  h2 {
-    color: #673ab7;
-  }
-  
-  .cotizacion {
-    border: 1px solid #33333381;
-    padding: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
     margin-bottom: 10px;
-    background-color: #f8f8f8;
-    border-radius: 5px;
+}
+
+.footer ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nm-ft{
+    color: white;
+}
+
+.fa-mug-saucer {
+    color: white;
   }
   
-  .cotizacion h2 {
-    font-size: 1em;
-    color: #333;
-    margin-bottom: 5px;
+  .social-icons a i {
+    transition: transform 0.3s;
   }
   
-  .cotizacion p {
-    font-size: 0.9em;
-    color: #555;
-    margin: 0;
+  .social-icons a:hover i {
+    transform: scale(1.2);
+ 
   }
+  .social-icons a:hover {
+    color: #007bff; 
+    transform: scale(1.1); 
+  }
+
+  .social-icons i:hover {
+    color: #007bff; 
+    transform: scale(1.1); 
+  }
+  
+  .list-unstyled li a:hover {
+    color: #007bff; 
+    text-decoration: underline; 
+    
+}
+
+  
